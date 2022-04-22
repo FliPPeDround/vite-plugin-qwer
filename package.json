@@ -1,0 +1,45 @@
+{
+  "name": "vite-plugin-qwer",
+  "version": "0.0.5",
+  "description": "JUST YOU CODE",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "ungly"
+  ],
+  "homepage": "https://github.com/FliPPeDround/vite-plugin-qwer",
+  "bugs": "https://github.com/FliPPeDround/vite-plugin-qwer/issues",
+  "license": "MIT",
+  "author": "Jojoy Peng <734243792@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FliPPeDround/vite-plugin-qwer"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "tsup": "^5.12.6",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5",
+    "vitest": "^0.7.10"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^4.2.1",
+    "xmorse": "^1.0.0"
+  }
+}
