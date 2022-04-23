@@ -6,7 +6,7 @@ interface Options {
   exclude?: FilterPattern
 }
 
-function qwerParese(code: string, codeBook: { [x: string]: string | RegExp }) {
+function qwerParser(code: string, codeBook: { [x: string]: string | RegExp }) {
   Object.keys(codeBook).forEach((key) => {
     code = code.replace(new RegExp(codeBook[key], 'g'), key)
   })
@@ -23,7 +23,7 @@ function VitePluginQwer(codeBook = {}): Plugin {
       const exclude = /node_modules/
       const filter = createFilter(include, exclude)
       if (filter(id)) {
-        return { code: qwerParese(code, codeBook) }
+        return { code: qwerParser(code, codeBook) }
       }
     }
   }
